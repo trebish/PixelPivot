@@ -1,0 +1,8 @@
+cd backend/demo-backend
+./mvnw package
+docker build -t <registry>/demo-backend:latest .
+docker push <registry>/demo-backend:latest
+
+cd ../../frontend/demo-frontend
+docker build -t <registry>/demo-frontend:latest .
+docker push <registry>/demo-frontend:latest

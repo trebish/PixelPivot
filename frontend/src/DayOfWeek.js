@@ -29,7 +29,7 @@ function DayOfWeek() {
       <h1>Day of the Week</h1>
       <form onSubmit={handleSubmit}>
         <label>
-          Enter date (YYYY-MM-DD):
+          Enter date:
           <input
             type="date"
             value={date}

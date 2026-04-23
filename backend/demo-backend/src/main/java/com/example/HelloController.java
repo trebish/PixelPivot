@@ -1,6 +1,7 @@
 package com.example;
 
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 import java.time.LocalDate;
 import java.time.DayOfWeek;
@@ -14,8 +15,9 @@ public class HelloController {
     }
 
     @GetMapping("/day-of-week")
-    public String getDayOfWeek() {
-        DayOfWeek day = LocalDate.now().getDayOfWeek();
+    public String getDayOfWeek(@RequestParam(required = false) String date) {
+        LocalDate targetDate = date != null ? LocalDate.parse(date) : LocalDate.now();
+        DayOfWeek day = targetDate.getDayOfWeek();
         return day.toString();
     }
 

@@ -1,0 +1,10 @@
+apiVersion: route.openshift.io/v1
+kind: Route
+metadata:
+  name: demo-backend-route
+spec:
+  to:
+    kind: Service
+    name: demo-backend-service
+  port:
+    targetPort: 8080
